@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Chổ để nhập</p>
+    <input id="aaa">
+    <br><br>
+    <button onclick="click1()">
+        Nút bấm nhập
+    </button>
+    <br><br>
+    <p>Chổ show kết quả</p>
+    <input id="bbb"> <input id="ddd">
+    <br><br>
+    <button onclick="click2()">
+        Thay đổi kết quả
+    </button>
+    <br><br>
+    <input id="ccc">
+    <br><br>
+    <button onclick="click3()">
+        In kết quả nhập
+    </button>
+    <script>
+
+        function click1() {
+            var setInput = document.getElementById("aaa").value;
+            var arrayStr = setInput.split(" ");
+            arrayStr2 = arrayStr;
+            document.getElementById("bbb").value = arrayStr;
+        }
+        var arrayStr2 = [];
+        // var eee = ["cam", "tao", "chuoi"];
+        // document.getElementById("bbb").value = eee;
+        function click2() {
+            var shiftItem = arrayStr2.shift();
+            arrayStr2.push(shiftItem);
+            document.getElementById("bbb").value = arrayStr2;
+            arrayStr3 = arrayStr2;
+        }
+        var arrayStr3 = [];
+        function click3() {
+            var printResult = document.getElementById("ccc").value;
+            var printResult = arrayStr3;
+            var printResult = printResult.concat(printResult.splice());
+            // document.getElementById("ddd").value = printResult;
+            var text = "";
+            for (var i = 0; i < printResult.length; i++) {
+                text += printResult[i];
+            }
+            document.getElementById("ddd").value = text
+        }
+    </script>
+</body>
+
+</html>
