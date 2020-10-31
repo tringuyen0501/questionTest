@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Nhập số mảng</p>
+    <input id="arrayLength">
+
+    <p>Nhập các số trong mảng</p>
+    <input id="arrayItems">
+    <br><br>
+    <button onclick="getInputValue()">
+        In kết quả
+    </button> <br>
+    <p>Kết quả các số trong mảng</p>
+    <input disabled id="result">
+
+</body>
+
+</html>
+<script>
+
+    function getInputValue() {
+        var boxValue = document.getElementById("arrayItems").value;
+        var arrayStr = boxValue.split(" ");
+        var arrayNum = document.getElementById("arrayLength").value;
+        if (arrayNum == arrayStr.length) {
+            var digits = arrayStr.map(Number);
+            var text = 0;
+            for (var i = 0; i < digits.length; i++) {
+                text += digits[i];
+            }
+            document.getElementById("result").value = text;
+        } else {
+            return alert(false);
+        }
+    }
+
+
+</script>

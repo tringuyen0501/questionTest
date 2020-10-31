@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Nhập phần tử trong mảng</p>
+    <input id="items">
+    <br><br>
+    <p>Nhập số lần cần dịch trái</p>
+    <input id="shiftLeft">
+    <br><br>
+    <button onclick="printResult()">
+        Hiển thị kết quả
+    </button>
+    <p>Mảng ban đầu</p>
+    <input id="originArray" disabled>
+    <br>
+    <p>Mảng sau khi dịch</p>
+    <input id="result" disabled>
+    <br><br>
+    <script>
+        function printResult() {
+            var inputItems = document.getElementById("items").value;
+            var items = inputItems.trim().split(" ");
+            // var setInput = document.getElementById("items").value;
+            document.getElementById("originArray").value = items;
+            var shiftCount = document.getElementById("shiftLeft").value;
+            for (var i = 0; i < shiftCount; i++) {
+                var shiftItem = items.shift();
+                items.push(shiftItem);
+            }
+            document.getElementById("result").value = items;
+        }
+    </script>
+</body>
+
+</html>
